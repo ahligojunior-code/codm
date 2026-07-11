@@ -1,0 +1,418 @@
+/* ==========================================================================
+   VARIABLES & DESIGN SYSTEM CYBERPUNK / GAMING LUXE
+   ========================================================================== */
+:root {
+    --bg-dark: #050505;
+    --card-bg: rgba(15, 15, 15, 0.75);
+    --neon-rose: #ff007f;
+    --neon-glow: rgba(255, 0, 127, 0.4);
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --text-main: #f5f5f5;
+    --text-muted: #a0a0a0;
+    --border-glass: rgba(255, 0, 127, 0.15);
+}
+
+/* ==========================================================================
+   RESET & STRUCTURE GENERALE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% 20%, rgba(255, 0, 127, 0.08), transparent 50%);
+}
+
+/* ==========================================================================
+   BARRE DE NAVIGATION (NAVBAR)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid var(--border-glass);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.nav-logo span {
+    color: var(--neon-rose);
+    text-shadow: 0 0 10px var(--neon-rose);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--neon-rose);
+    text-shadow: 0 0 8px var(--neon-rose);
+    background: rgba(255, 0, 127, 0.05);
+}
+
+.burger-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--neon-rose);
+    text-shadow: 0 0 8px var(--neon-rose);
+    transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   CONTENU PRINCIPAL & GLOBAL LAYOUT
+   ========================================================================== */
+.main-content {
+    padding: 3rem 5%;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    border-left: 5px solid var(--gold);
+    padding-left: 1rem;
+}
+
+.neon-text {
+    color: var(--neon-rose);
+    text-shadow: 0 0 15px var(--neon-rose);
+}
+
+.text-gold { 
+    color: var(--gold); 
+    text-shadow: 0 0 8px var(--gold-glow); 
+}
+
+.text-neon { 
+    color: var(--neon-rose); 
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-rose);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.2);
+}
+
+/* BOUTONS CYBERPUNK */
+.btn-neon, .btn-gold {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-neon {
+    background: transparent;
+    color: var(--neon-rose);
+    border: 2px solid var(--neon-rose);
+    box-shadow: inset 0 0 8px var(--neon-rose), 0 0 8px var(--neon-rose);
+}
+
+.btn-neon:hover {
+    background: var(--neon-rose);
+    color: #fff;
+    box-shadow: 0 0 20px var(--neon-rose);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-gold:hover {
+    background: #fff;
+    box-shadow: 0 0 15px var(--gold);
+}
+
+.btn-neon-sm {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    color: var(--neon-rose);
+    border: 1px solid var(--neon-rose);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.btn-neon-sm:hover {
+    background: var(--neon-rose);
+    color: #fff;
+}
+
+/* ==========================================================================
+   1. ZONE INTERACTIVE GUNSMITH
+   ========================================================================== */
+.tier-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tier-btn {
+    background: #111;
+    border: 1px solid #333;
+    color: var(--text-muted);
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.tier-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.gunsmith-container {
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 420px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.weapon-display {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weapon-display img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px rgba(255, 0, 127, 0.3));
+    z-index: 2;
+}
+
+.tier-badge {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    background: var(--gold);
+    color: #000;
+    padding: 0.4rem 1.2rem;
+    font-weight: 900;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px var(--gold-glow);
+    z-index: 10;
+}
+
+.attachment-card {
+    position: absolute;
+    background: rgba(5, 5, 5, 0.9);
+    border-left: 3px solid var(--neon-rose);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 0 8px rgba(255, 0, 127, 0.15);
+    font-size: 0.85rem;
+    min-width: 190px;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.attachment-card:hover {
+    border-left-color: var(--gold);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transform: scale(1.03);
+}
+
+.attachment-card .att-type {
+    display: block;
+    color: var(--gold);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.attachment-card .att-name {
+    color: #fff;
+    font-weight: 600;
+}
+
+.att-1 { top: 5%; left: 2%; }
+.att-2 { bottom: 15%; left: 2%; }
+.att-3 { bottom: 2%; left: 40%; }
+.att-4 { top: 10%; right: 2%; }
+.att-5 { bottom: 12%; right: 2%; }
+
+.loadout-builder h3 {
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+}
+
+.build-slot select, .dynamic-form select, .dynamic-form input, .dynamic-form textarea, .form-row input, .form-row select {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    padding: 0.8rem;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   AUTRES SECTIONS (NEWS, CLANS, ACADÉMIE, CHAT)
+   ========================================================================== */
+.news-card { position: relative; overflow: hidden; }
+.news-tag { position: absolute; top: 10px; right: 10px; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px; }
+.news-tag.leak { background: #6f42c1; color: #fff; }
+.news-tag.draw { background: var(--gold); color: #000; }
+
+.clan-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.clans-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+.level-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 1rem; }
+.level-badge.easy { background: #28a745; color: #fff; }
+.level-badge.medium { background: #fd7e14; color: #fff; }
+.level-badge.hard { background: #dc3545; color: #fff; }
+
+.form-row { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.form-row input, .form-row select { flex: 1; min-width: 200px; margin-top: 0; }
+.analysis-result.hidden { display: none; }
+
+.players-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.player-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #222; padding-bottom: 0.5rem; }
+
+.chat-wrapper { display: flex; flex-direction: column; height: 450px; }
+.chat-box { flex: 1; overflow-y: auto; padding-right: 1rem; margin-bottom: 1rem; }
+.chat-msg { background: rgba(255, 255, 255, 0.03); padding: 0.6rem 1rem; border-radius: 6px; margin-bottom: 0.6rem; font-size: 0.9rem; border-left: 2px solid rgba(255, 255, 255, 0.1); }
+.chat-input-area { display: flex; gap: 1rem; }
+
+/* ==========================================================================
+   ANIMATIONS & RESPONSIVE DESIGN (AVEC FIX NAVIGATION MOBILE)
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 968px) {
+    .burger-menu { 
+        display: block; /* Affiche les 3 barres sur mobile */
+    }
+    
+    .nav-links { 
+        display: none; /* Cache les liens par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.98);
+        border-bottom: 1px solid var(--border-glass);
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    }
+
+    /* Classe injectée en JS lors du clic sur les 3 barres */
+    .nav-links.mobile-open {
+        display: flex; 
+        animation: fadeIn 0.3s ease forwards;
+    }
+    
+    .clan-layout { grid-template-columns: 1fr; }
+    
+    .weapon-display {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .attachment-card {
+        position: static !important;
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .weapon-display img {
+        max-width: 100%;
+        margin: 1.5rem 0;
+    }
+}

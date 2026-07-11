@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODM HUB // Warzone Loadout Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">CODM<span>HUB</span></div>
+        <ul class="nav-links">
+            <li><a href="#gunsmith" class="active" onclick="switchTab(event, 'gunsmith')"><i class="fa-solid fa-crosshairs"></i> Gunsmith</a></li>
+            <li><a href="#news" onclick="switchTab(event, 'news')"><i class="fa-solid fa-newspaper"></i> News</a></li>
+            <li><a href="#clans" onclick="switchTab(event, 'clans')"><i class="fa-solid fa-shield-halved"></i> Clans</a></li>
+            <li><a href="#academy" onclick="switchTab(event, 'academy')"><i class="fa-solid fa-graduation-cap"></i> Académie</a></li>
+            <li><a href="#specs" onclick="switchTab(event, 'specs')"><i class="fa-solid fa-mobile-screen-button"></i> Config Mobile</a></li>
+            <li><a href="#players" onclick="switchTab(event, 'players')"><i class="fa-solid fa-users"></i> Joueurs</a></li>
+            <li><a href="#chat" onclick="switchTab(event, 'chat')"><i class="fa-solid fa-comments"></i> Chat</a></li>
+        </ul>
+        <div class="burger-menu"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <main class="main-content">
+
+        <section id="gunsmith" class="tab-content active">
+            <h2 class="section-title">Armes Meta & <span class="neon-text">Gunsmith</span></h2>
+            
+            <div class="tier-selector">
+                <button class="tier-btn active" onclick="filterTier('S')">Tier S</button>
+                <button class="tier-btn" onclick="filterTier('A')">Tier A</button>
+                <button class="tier-btn" onclick="filterTier('B')">Tier B</button>
+            </div>
+
+            <div class="gunsmith-container">
+                <div class="weapon-display">
+                    <div class="tier-badge">TIER S</div>
+                    <img src="https://via.placeholder.com/600x250/000000/ffffff?text=BP50+Mitraillette" alt="Arme Meta" id="weapon-img">
+                    
+                    <div class="attachment-card att-1" style="top: 10%; left: 5%;">
+                        <span class="att-type">Bouche</span>
+                        <span class="att-name">Silencieux Monolithique</span>
+                    </div>
+                    <div class="attachment-card att-2" style="top: 50%; left: -5%;">
+                        <span class="att-type">Canon</span>
+                        <span class="att-name">Canon Étendu OWC</span>
+                    </div>
+                    <div class="attachment-card att-3" style="top: 85%; left: 20%;">
+                        <span class="att-type">Laser</span>
+                        <span class="att-name">Laser Tactique OWC</span>
+                    </div>
+                    <div class="attachment-card att-4" style="top: 80%; right: 5%;">
+                        <span class="att-type">Chargeur</span>
+                        <span class="att-name">Chargeur Rapide de 40 cartouches</span>
+                    </div>
+                    <div class="attachment-card att-5" style="top: 25%; right: -5%;">
+                        <span class="att-type">Crosse</span>
+                        <span class="att-name">Sans Crosse Combat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loadout-builder">
+                <h3>Complète ton build</h3>
+                <div class="grid-3">
+                    <div class="glass-card build-slot">
+                        <h4><i class="fa-solid fa-bomb text-gold"></i> Tactique & Mortel</h4>
+                        <select id="tactical-select">
+                            <option>Stimulant + Grenade Frag</option>
+                            <option>Système Trophy + Thermite</option>
+                            <option>IEM + Bombe C4</option>
+                        </select>
+                    </div>
+                    <div class="glass-card build-slot">
+                        <h4><i class="fa-solid fa-shield text-gold"></i> Atouts (Rouge, Vert, Bleu)</h4>
+                        <select id="perks-select">
+                            <option>Poids Plume / Sang-Froid / Silence de Mort</option>
+                            <option>Persistance / Récupération Rapide / Alerte</option>
+                        </select>
+                    </div>
+                    <div class="glass-card build-slot">
+                        <h4><i class="fa-solid fa-jet-fighter text-gold"></i> Scorestreaks</h4>
+                        <select id="streaks-select">
+                            <option>Drone / Drone de brouillage / Goliath</option>
+                            <option>Foudroiement / ADAV / Swarm</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="tab-content">
+            <h2 class="section-title">Actualités & <span class="neon-text">Leaks</span></h2>
+            <div class="grid-3">
+                <div class="glass-card news-card">
+                    <div class="news-tag leak">LEAK</div>
+                    <h4>Saison 6 : Nouvelles armes et équilibrages révélés !</h4>
+                    <p>Découvrez en avance les buffs et nerfs des fusils d'assaut...</p>
+                    <a href="#" class="btn-neon-sm">Lire la suite</a>
+                </div>
+                <div class="glass-card news-card">
+                    <div class="news-tag draw">LUCKY DRAW</div>
+                    <h4>Tirage "Créature Mythique" disponible</h4>
+                    <p>Zoom sur le skin d'arme évolutif de cette semaine.</p>
+                    <a href="#" class="btn-neon-sm">Voir le tirage</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="clans" class="tab-content">
+            <h2 class="section-title">Recrutement de <span class="neon-text">Clans</span></h2>
+            <div class="clan-layout">
+                <form class="glass-card dynamic-form" id="clanForm">
+                    <h3>Enregistrer ton Clan</h3>
+                    <input type="text" placeholder="Nom du Clan" required>
+                    <select required>
+                        <option value="">Mode Principal</option>
+                        <option value="MJ">Multijoueur (MJ)</option>
+                        <option value="BR">Battle Royale (BR)</option>
+                        <option value="Mixte">Mixte</option>
+                    </select>
+                    <input type="text" placeholder="Niveau requis (ex: Grand Maître, Légendaire)">
+                    <input type="text" placeholder="Lien WhatsApp ou Discord" required>
+                    <textarea placeholder="Description du clan, objectifs et horaires..."></textarea>
+                    <button type="submit" class="btn-gold">Publier la fiche</button>
+                </form>
+                <div class="clans-list" id="clansContainer">
+                    </div>
+            </div>
+        </section>
+
+        <section id="academy" class="tab-content">
+            <h2 class="section-title">Académie <span class="neon-text">CODM</span></h2>
+            <div class="grid-3">
+                <div class="glass-card academy-card">
+                    <span class="level-badge easy">Débutant</span>
+                    <h4>Maîtriser le HUD & les tirs</h4>
+                    <p>Agencer ses boutons en mode 3 ou 4 doigts pour réagir instantanément.</p>
+                </div>
+                <div class="glass-card academy-card">
+                    <span class="level-badge medium">Intermédiaire</span>
+                    <h4>Mouvements Pro : Slide-Cancel & Dropshot</h4>
+                    <p>Comment briser la caméra de vos adversaires en combat rapproché.</p>
+                </div>
+                <div class="glass-card academy-card">
+                    <span class="level-badge hard">Pro</span>
+                    <h4>Gestion des Spawns en Point Stratégique</h4>
+                    <p>Anticiper les rotations et bloquer les réapparitions ennemies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="specs" class="tab-content">
+            <h2 class="section-title">Analyseur de <span class="neon-text">Configuration</span></h2>
+            <div class="glass-card device-analyzer">
+                <p>Entre les composants de ton smartphone pour obtenir ta sensibilité et tes graphismes optimisés.</p>
+                <div class="form-row">
+                    <input type="text" id="phoneModel" placeholder="Modèle de téléphone (ex: Poco F5, iPhone 14)">
+                    <select id="ramSelect">
+                        <option value="4">4 Go RAM ou moins</option>
+                        <option value="6">6 Go RAM</option>
+                        <option value="8">8 Go RAM ou plus</option>
+                    </select>
+                    <button class="btn-neon" onclick="analyzeDevice()">Analyser l'appareil</button>
+                </div>
+                <div id="analysisResult" class="analysis-result hidden">
+                    </div>
+            </div>
+        </section>
+
+        <section id="players" class="tab-content">
+            <h2 class="section-title">Recherche de <span class="neon-text">Coéquipiers</span></h2>
+            <div class="players-grid" id="playersContainer">
+                <div class="glass-card player-card">
+                    <div class="player-header">
+                        <h4>Ghost_Killa</h4>
+                        <span class="flag">🇫🇷</span>
+                    </div>
+                    <p><strong>Mode :</strong> MJ (Légendaire)</p>
+                    <p><strong>Micro :</strong> <span class="text-neon">Oui</span></p>
+                    <p><strong>Région :</strong> Europe</p>
+                    <button class="btn-neon-sm">Inviter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="chat" class="tab-content">
+            <h2 class="section-title">Live <span class="neon-text">Chat</span></h2>
+            <div class="glass-card chat-wrapper">
+                <div class="chat-box" id="chatBox">
+                    <div class="chat-msg"><span class="msg-user text-gold">[CODM_Pro]:</span> Quelqu'un pour des classées MJ maintenant ? Tier Légendaire requis.</div>
+                    <div class="chat-msg"><span class="msg-user text-neon">[SniperElite]:</span> Le nouveau build du BP50 est complètement cheaté !</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Écris ton message ici...">
+                    <button class="btn-gold" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

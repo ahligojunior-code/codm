@@ -36,9 +36,9 @@ function switchTab(event, tabId) {
 // 1. FILTRE ZONE ARME / GUNSMITH TIER LIST
 // ==========================================================================
 const weaponsData = {
-    'S': { name: "BP50", img: "https://www.callofduty.com/content/dam/atvi/callofduty/codm/season-2024/s6/hub/s6-weapons-bp50.png", atts: ["Silencieux Monolithique", "Canon Étendu OWC", "Laser Tactique OWC", "Chargeur Rapide 40 c.", "Sans Crosse"] },
-    'A': { name: "DR-H", img: "https://via.placeholder.com/600x250/000000/ffffff?text=DR-H+A-Tier", atts: ["Compensateur OWC", "Canon 25 OWC", "Atout Blessure", "Chargeur de 30 c.", "Poignée Granulée"] },
-    'B': { name: "M4", img: "https://via.placeholder.com/600x250/000000/ffffff?text=M4+B-Tier", atts: ["Silencieux Léger", "Crosse Combat YKM", "Laser 5mW", "Chargeur 50 c.", "Poignée Caoutchoutée"] }
+    'S': { name: "BP50", img: "https://th.bing.com/th/id/OIP.Z7AN7fn8V4slykaIu99gRAHaEK?w=285&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3", atts: ["Silencieux Monolithique", "Canon Étendu OWC", "Laser Tactique OWC", "Chargeur Rapide 40 c.", "Sans Crosse"] },
+    'A': { name: "DR-H", img: "https://zilliongamer.com/uploads/codm/skins/assault/dr-h/dr-h-wicked-claw-cod-mobile.jpg", atts: ["Compensateur OWC", "Canon 25 OWC", "Atout Blessure", "Chargeur de 30 c.", "Poignée Granulée"] },
+    'B': { name: "M4", img: "https://th.bing.com/th/id/OIP.LfQii_HKxZd21RyZfdQK9gHaDa?w=285&h=161&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3", atts: ["Silencieux Léger", "Crosse Combat YKM", "Laser 5mW", "Chargeur 50 c.", "Poignée Caoutchoutée"] }
 };
 
 function filterTier(tier) {
